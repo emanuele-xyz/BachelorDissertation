@@ -1,12 +1,30 @@
 \documentclass{beamer}
+
+\usepackage{graphicx}
+
 \usetheme{Boadilla}
 
-\title{Exploring The Vulkan Graphics API}
+\AtBeginSection[]{
+    \begin{frame}
+    \vfill
+    \centering
+      \usebeamerfont{title}\insertsectionhead\par%
+    \vfill
+    \end{frame}
+}
+
+\title{Esplorare L'API Grafica Vulkan}
 \author{Emanuele Franchi}
 \date{}
 
 \begin{document}
 
-\include{FrTitle.tex}
+\include{SlidesTitle.tex}
+
+\section{Vulkan}
+\include{SlidesVulkan/FrameVulkanAPI.tex}
+\include{SlidesVulkan/FrameVulkanSepc.tex}
+\include{SlidesVulkan/FrameOpenGL.tex}
+\include{SlidesVulkan/FrameVulkan.tex}
 
 \end{document}
