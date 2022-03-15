@@ -1,0 +1,15 @@
+\begin{frame}
+\frametitle{Main Loop (1)}
+
+\begin{itemize}
+\item Otteniamo un'immagine dalla swapchain
+\item Non è garantito che questa immagine possa essere immediatamente utilizzata
+\item \texttt{imageAvailableSemaphore} viene segnalato quando l'immagine è disponibile
+\item Aspettiamo che la GPU termini l'esecuzione dei comandi precedenti
+\item Facciamo questo, aspettando sulla fence che abbiamo creato
+\item Creiamo un framebuffer per il nostro render pass, che contiene l'immagine della swapchain che abbiamo ottenuto
+\item Registriamo due comandi sul command buffer: uno per iniziare un'istanza del nostro render pass, e uno per terminarla
+\item Iniziando il render pass, specifichiamo il colore da scrivere nel color target
+\end{itemize}
+
+\end{frame}
