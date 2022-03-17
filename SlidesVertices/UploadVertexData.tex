@@ -1,0 +1,13 @@
+\begin{frame}
+\frametitle{Inviare Vertici Alla GPU}
+
+\begin{itemize}
+\item Copiamo i vertici dalla RAM alla memoria della GPU
+\item Usiamo due buffer allocati sulla memoria della GPU: staging buffer e vertex buffer
+\item Lo staging buffer è allocato su una parte della memoria della GPU che è visibile anche dalla CPU (memoria più lenta)
+\item Il vertex buffer è allocato su una parte della memoria della GPU che non è visibile dalla CPU (memoria più veloce)
+\item Carichiamo i dati nello staging buffer
+\item Inviamo un comando alla GPU per copiare il contenuto dello staging buffer nel vertex buffer
+\end{itemize}
+
+\end{frame}

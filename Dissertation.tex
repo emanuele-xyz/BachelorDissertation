@@ -1,6 +1,8 @@
 \documentclass{beamer}
 
 \usepackage{graphicx}
+\usepackage{color}
+\usepackage{listings}
 
 \usetheme{Boadilla}
 
@@ -13,6 +15,29 @@
     \end{frame}
 }
 
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{darkorange}{rgb}{1,0.4,0}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\color{darkgreen},
+    keywordstyle=\color{blue},
+    numberstyle=\color{black},
+    stringstyle=\color{darkorange},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=none,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    breaklines=true,
+}
+
+\lstset{style=codestyle}
+
 \title{Esplorare L'API Grafica Vulkan}
 \author{Emanuele Franchi}
 \date{}
@@ -21,26 +46,45 @@
 
 \include{SlidesTitle.tex}
 
-\section{Vulkan}
-\include{SlidesVulkan/FrameVulkanAPI.tex}
-\include{SlidesVulkan/FrameVulkanSepc.tex}
-\include{SlidesVulkan/FrameOpenGL.tex}
-\include{SlidesVulkan/FrameVulkan.tex}
+% \include{SlidesVulkan/FrameVulkanAPI.tex}
+% \include{SlidesVulkan/FrameVulkan.tex}
+%
+% \include{SlidesInitializingVulkan/Instance.tex}
+% \include{SlidesInitializingVulkan/WindowAndSurface.tex}
+% \include{SlidesInitializingVulkan/GPUSelection.tex}
+% \include{SlidesInitializingVulkan/LogicalDevice.tex}
+% \include{SlidesInitializingVulkan/Swapchain.tex}
+%
+% \include{SlidesClearWindow/Demo.tex}
+% \include{SlidesClearWindow/Setup.tex}
+% \include{SlidesClearWindow/RenderPass.tex}
+% \include{SlidesClearWindow/AttachmentDescription.tex}
+% \include{SlidesClearWindow/Subpass.tex}
+% \include{SlidesClearWindow/MainLoop1.tex}
+% \include{SlidesClearWindow/MainLoop2.tex}
+%
+% \include{SlidesTriangle/Demo.tex}
+% \include{SlidesTriangle/VertexShader.tex}
+% \include{SlidesTriangle/FragmentShader.tex}
+% \include{SlidesTriangle/PipelineStateObject.tex}
+% \include{SlidesTriangle/Rendering.tex}
+%
+% \include{SlidesVertices/Demo.tex}
+% \include{SlidesVertices/UploadVertexData.tex}
+% \include{SlidesVertices/PipelineVertexInputState.tex}
+% \include{SlidesVertices/Rendering.tex}
+%
+% \include{SlidesUniforms/Demo.tex}
 
-\section{Inizializzare Vulkan}
-\include{SlidesInitializingVulkan/Instance.tex}
-\include{SlidesInitializingVulkan/WindowAndSurface.tex}
-\include{SlidesInitializingVulkan/GPUSelection.tex}
-\include{SlidesInitializingVulkan/LogicalDevice.tex}
-\include{SlidesInitializingVulkan/Swapchain.tex}
-
-\section{Renderizzare Un Colore A Schermo}
-\include{SlidesClearWindow/Demo.tex}
-\include{SlidesClearWindow/Setup.tex}
-\include{SlidesClearWindow/RenderPass.tex}
-\include{SlidesClearWindow/AttachmentDescription.tex}
-\include{SlidesClearWindow/Subpass.tex}
-\include{SlidesClearWindow/MainLoop1.tex}
-\include{SlidesClearWindow/MainLoop2.tex}
+\include{SlVulkan.tex}
+\include{SlInitializingVulkan.tex}
+\include{SlClearWindow.tex}
+\include{SlTriangle.tex}
+\include{SlVertices.tex}
+\include{SlUniforms.tex}
+\include{SlDepthTesting.tex}
+\include{SlScene.tex}
+\include{SlBlinnPhong.tex}
+\include{SlMSAA.tex}
 
 \end{document}
