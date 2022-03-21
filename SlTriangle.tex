@@ -7,21 +7,15 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Renderizzare Un Triangolo: Vertex Shader}
-\lstinputlisting[language=C++]{src/SlidesTriangle/shader.vert}
-\end{frame}
-
-\begin{frame}
-\frametitle{Renderizzare Un Triangolo: Fragment Shader}
-\lstinputlisting[language=C++]{src/SlidesTriangle/shader.frag}
-\end{frame}
-
-\begin{frame}
 \frametitle{Renderizzare Un Triangolo}
 \begin{itemize}
-\item Usiamo un pipeline state object per descrivere l'intero stato della pipeline grafica
-\item Un pipeline state object descrive anche quali shader utilizzare
-\item Sul command buffer, scriviamo un comando che indica alla GPU di configurare lo stato della pipeline grafica usando il pipeline state object da noi creato
-\item Sempre sul command buffer, scriviamo un comando che attiva la pipeline grafica per renderizzare tre vertici
+\item Creazione di un pipeline state object
+\item Un pipeline state object descrive l'intero stato della pipeline grafica
+\item Shader: programmi eseguiti dalla GPU
+\item In particolare vertex shader e un fragment shader
+\item La GPU riceve come input una sequenza di vertici
+\item La GPU esegue il vertex shader per ogni vertice
+\item Il vertex shader genera della geometria
+\item La GPU esegue il fragment shader per ogni pixel coperto dalla geometria
 \end{itemize}
 \end{frame}

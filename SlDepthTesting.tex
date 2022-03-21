@@ -26,22 +26,13 @@
 \begin{itemize}
 \item Come renderizzare oggetti in modo tale che quelli più vicini possano nascondere quelli più lontani?
 \item Possiamo ordinare gli oggetti in base alla loro lontananza dalla camera
-\item Questa soluzione non funziona bene se due o più oggetti si sovrappongono in tutto o in parte
-\item Se gli oggetti da renderizzare sono opachi, allora possiamo usare un depth buffer
-\item Un depth buffer è un'immagine che codifica informazioni riguardanti la distanza dei frammenti dalla camera
-\item Quando un frammento viene generato, compariamo la profondità del frammento con quella salvata nel corrispettivo texel del depth buffer
-\item Se è più grande, il frammento non viene utilizzato
+\item E se due oggetti si sovrappongono?
+\item Se gli oggetti da renderizzare sono opachi, usiamo un depth buffer
+\item Un depth buffer è un'immagine che codifica informazioni riguardanti la profondità dei frammenti
+\item Quando un frammento viene generato, compariamo la sua profondità con quella salvata nel corrispettivo texel del depth buffer
+\item Se è più grande, il frammento non viene ignorato
 \item Se è più piccola, il frammento viene utilizzato e la sua profondità viene salvata nel depth buffer
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Depth Buffer: Implementazione}
-\begin{itemize}
-\item Allochiamo un'immagine, sulla memoria della GPU, che possa essere usata come depth buffer
-\item Nel nostro render pass, aggiungiamo un nuovo attachment
-\item Questo attachment viene usato come depth stencil attachment durante il nostro subpass
-\item Durante la creazione del pipeline state object dobbiamo abilitare il depth testing
-\item Quando iniziamo un'istanza del render pass, specifichiamo un clear value di $1.0$ per il depth buffer
+\item Creiamo un'immagine da usare come depth stencil attachment
+\item Abilitiamo il depth testing quando creiamo il pipeline state object
 \end{itemize}
 \end{frame}

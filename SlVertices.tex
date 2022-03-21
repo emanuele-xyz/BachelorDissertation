@@ -9,13 +9,13 @@
 \begin{frame}
 \frametitle{Vertex Buffer}
 \begin{itemize}
-\item I dati dei nostri vertici sono in RAM e noi dobbiamo caricarli nella memoria della GPU
+\item I nostri vertici sono in RAM e noi dobbiamo caricarli nella memoria della GPU
+\item I vertici non cambiano durante l'esecuzione dell'applicazione
+\item Vogliamo rendere la lettura dei nostri vertici, da parte della GPU, il più veloce possibile
 \item Usiamo due buffer
-\item Uno staging buffer, allocato su memoria della GPU host visible
+\item Uno staging buffer, allocato su memoria della GPU host visible (lenta)
 \item Scriviamo i dati dei nostri vertici su questo buffer
-\item Un vertex buffer, allocato su memoria della GPU device local
-\item Inviamo un comando che dice alla GPU di trasferire il contenuto dello staging buffer nel vertex buffer
-\item Modifichiamo la creazione del nostro pipeline state object per specificare come interpretare i dati nel vertex buffer
-\item Prima di registrare il comando per attivare la pipeline, registriamo un comando che indica alla pipeline grafica di usare come input il nostro vertex buffer
+\item Un vertex buffer, allocato su memoria della GPU device local (veloce)
+\item Inviamo un comando alla GPU per trasferire il contenuto dello staging buffer nel vertex buffer
 \end{itemize}
 \end{frame}

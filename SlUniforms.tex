@@ -9,13 +9,14 @@
 \begin{frame}
 \frametitle{Uniform Buffer}
 \begin{itemize}
-\item Passiamo variabili globali agli shader usando uno uniform buffer
+\item Una variabile globale di uno shader è detta uniform
+\item Passiamo le variabili globali agli shader usando uno uniform buffer
 \item Siccome tali variabili cambiano frequentemente, allochiamo uno uniform buffer su memoria della GPU host visible
-\item Informiamo di questo fatto la pipeline, usando un pipeline layout object
-\item Tale oggetto descrive quali descriptor (risorse) sono globalmente accessibili in quali shader
-\item Creiamo un descriptor set layout che descrive il numero e i tipi di descriptor
-\item Allochiamo un descriptor set basandoci sul descriptor set layout
-\item Una volta allocato, un descriptor set va popolato prima di essere utilizzato
-\item Prima di scrivere il comando per attivare la pipeline, scriviamo nel command buffer un comando per informare la GPU che stiamo usando un certo descriptor set
+\item Creiamo un pipeline layout object
+\item Un pipeline layout object descrive quali descriptor sono accessibili in quali shader
+\item Creiamo un descriptor set layout
+\item Un descriptor set layout descrive il contenuto di un descriptor set
+\item Creiamo un descriptor set basandoci su un descriptor set layout
+\item Una volta allocato, un descriptor set va popolato con i descriptor appropriati
 \end{itemize}
 \end{frame}

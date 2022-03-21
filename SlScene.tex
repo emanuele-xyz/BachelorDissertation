@@ -25,17 +25,10 @@
 \frametitle{Scena}
 \begin{itemize}
 \item Organizziamo gli oggetti da renderizzare in una scena
-\item Ogni oggetto ha una posizione, rotazione e scala (model matrix)
-\item Uno o più oggetti condividono un vertex buffer e un pipeline state object
-\item Più oggetti diversi possono usare gli stessi vertici e la stessa configurazione della pipeline
+\item Abbiamo una camera attraverso la quale guardiamo la scena
+\item Possiamo mettere uno o più oggetti all'interno della scena
+\item Questi oggetti possono condividere un vertex buffer e un pipeline state object
+\item Infatti, oggetti diversi possono usare gli stessi vertici e la stessa configurazione della pipeline
 \item Ogni oggetto ha un proprio uniform buffer
-\item Per renderizzare gli oggetti di una scena
-\begin{itemize}
-\item Usiamo il pipeline state object dell'oggetto
-\item Usiamo il vertex buffer dell'oggetto
-\item Usiamo lo uniform buffer dell'oggetto
-\item Attiviamo la pipeline
-\end{itemize}
-\item Abbiamo una camera attraverso la quale guardiamo la scena (view e projection matrix)
 \end{itemize}
 \end{frame}
