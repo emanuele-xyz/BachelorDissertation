@@ -30,7 +30,7 @@
 \item Se gli oggetti da renderizzare sono opachi, usiamo un depth buffer
 \item Un depth buffer è un'immagine che codifica informazioni riguardanti la profondità dei frammenti
 \item Quando un frammento viene generato, compariamo la sua profondità con quella salvata nel corrispettivo texel del depth buffer
-\item Se è più grande, il frammento non viene ignorato
+\item Se è più grande, il frammento viene ignorato
 \item Se è più piccola, il frammento viene utilizzato e la sua profondità viene salvata nel depth buffer
 \item Creiamo un'immagine da usare come depth stencil attachment
 \item Abilitiamo il depth testing quando creiamo il pipeline state object
